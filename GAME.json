@@ -1,0 +1,287 @@
+{
+  "name": "Mapborn Fantasy Tactics",
+  "menuBackgroundImage": "https://unsplash.com/it/s/foto/sfondo-casuale",
+  "defaultRessources": {
+    "backgrounds": [
+      "https://unsplash.com/it/s/foto/sfondo-casuale"
+    ],
+    "decksUrl": ""
+  },
+  "customHelp": "Gioca le carte del mazzo principale nella Zona Base. Le Spells vanno temporaneamente nella Stack prima di finire nel Graveyard. Le carte Stone, Market e Leader hanno sezioni dedicate sul campo.",
+  "cardRotation": 45,
+  "cards": {
+    "dataUrl": "",
+    "cardBack": "https://ibb.co/gMcL4L8C"
+  },
+  "deckBuilding": {
+    "mainFilters": [
+      "type",
+      "cost"
+    ],
+    "formats": [
+      {
+        "title": "Standard",
+        "gameplay": "Classic",
+        "legalityCode": "STD",
+        "deckRuleset": "Standard"
+      }
+    ]
+  },
+  "gameplay": {
+    "Classic": {
+      "mulligan": {
+        "info": "Puoi scartare l'intera mano e pescare 5 nuove carte (massimo 1 mulligan).",
+        "startingHandSize": 5,
+        "drawNewHand": true,
+        "putSelectionAtBottom": false,
+        "drawNewSelectedCards": false
+      },
+      "newTurn": {
+        "drawOnStart": true,
+        "sharedTurn": false,
+        "firstPlayerTokenName": "",
+        "drawPerTurn": 1
+      },
+      "defaultNotes": "",
+      "tokens": [
+        {
+          "name": "Segnalino Danno",
+          "image": "https://valcur.github.io/TCG-Arena-MTG/Images/Tokens/Red.png"
+        },
+        {
+          "name": "Boost ATK (+1)",
+          "image": "https://valcur.github.io/TCG-Arena-MTG/Images/Tokens/Orange.png"
+        },
+        {
+          "name": "Boost HP (+1)",
+          "image": "https://valcur.github.io/TCG-Arena-MTG/Images/Tokens/Green.png"
+        }
+      ],
+      "countersStartingValues": [
+        0
+      ],
+      "hideFacedDownCards": false,
+      "sections": {
+        "customSections": [
+          "MarketDeck",
+          "Market",
+          "Battlefield",
+          "Graveyard",
+          "Exiled",
+          "StoneDeck",
+          "Stones",
+          "Base",
+          "MainDeck",
+          "Leader",
+          "LeaderStats"
+        ],
+        "layout": {
+          "direction": "column",
+          "isSymetricalForOpponents": false,
+          "content": [
+            {
+              "direction": "row",
+              "content": [
+                {
+                  "section": "MarketDeck",
+                  "style": {
+                    "width": "12vh",
+                    "transform": "rotate(90deg)"
+                  }
+                },
+                {
+                  "section": "Market",
+                  "style": {
+                    "width": "20vh"
+                  }
+                },
+                {
+                  "section": "Battlefield"
+                },
+                {
+                  "section": "Graveyard",
+                  "style": {
+                    "width": "15vh"
+                  }
+                },
+                {
+                  "section": "Exiled",
+                  "style": {
+                    "width": "15vh"
+                  }
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "content": [
+                {
+                  "section": "StoneDeck",
+                  "style": {
+                    "width": "12vh"
+                  }
+                },
+                {
+                  "section": "Stones",
+                  "style": {
+                    "width": "20vh"
+                  }
+                },
+                {
+                  "section": "Base"
+                },
+                {
+                  "section": "MainDeck",
+                  "style": {
+                    "width": "15vh"
+                  }
+                },
+                {
+                  "section": "Leader",
+                  "style": {
+                    "width": "15vh"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "categoriesAlreadyOnBoard": [
+          "Leader->Leader",
+          "Stone Deck->StoneDeck",
+          "Market Deck->MarketDeck"
+        ],
+        "autoPlayFromHand": {
+          "Creatures": "Base",
+          "Items": "Base",
+          "Stones": "Stones",
+          "Spells": "Stack",
+          "Leaders": "Leader"
+        },
+        "autoPlayFromStack": {
+          "Spells": "Graveyard"
+        },
+        "sectionsDict": {
+          "MarketDeck": {
+            "title": "MarketDeck",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Market Deck",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Market": {
+            "title": "Market",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Mercato",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Battlefield": {
+            "title": "Battlefield",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Battlefield",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Graveyard": {
+            "title": "Graveyard",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DISCARD",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Graveyard",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Exiled": {
+            "title": "Exiled",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DISCARD",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Exiled",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "StoneDeck": {
+            "title": "StoneDeck",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Stone Deck",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Stones": {
+            "title": "Stones",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Zona Stones",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Base": {
+            "title": "Base",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": "true",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Zona Base",
+            "enterTapped": false,
+            "enter
