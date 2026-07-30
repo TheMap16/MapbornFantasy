@@ -1,0 +1,359 @@
+{
+  "name": "Mapborn Fantasy Tactics",
+  "menuBackgroundImage": "https://unsplash.com/it/s/foto/sfondo-casuale",
+  "deckBuilding": {
+    "mainFilters": [
+      "type",
+      "cost"
+    ],
+    "costCurveIgnoredTypes": [
+      "Stones"
+    ],
+    "formats": [
+      {
+        "title": "Standard",
+        "gameplay": "Standard",
+        "legalityCode": "STD",
+        "deckRuleset": "Standard"
+      }
+    ],
+    "deckRulesets": {
+      "Standard": {
+        "checkCardLegality": false,
+        "general": {
+          "min": 40,
+          "max": 60,
+          "maxPerCard": 3
+        },
+        "categories": [
+          {
+            "category": "Leader",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "category": "Stone Deck",
+            "min": 0,
+            "max": 12
+          },
+          {
+            "category": "Market Deck",
+            "min": 10,
+            "max": 10
+          }
+        ]
+      }
+    }
+  },
+  "gameplay": {
+    "Standard": {
+      "mulligan": {
+        "startingHandSize": 5,
+        "mulliganCycle": {
+          "info": "Puoi rimescolare l'intera mano nel mazzo e pescare 5 nuove carte (massimo 1 tentativo).",
+          "steps": [
+            "toBottom",
+            "shuffle",
+            "draw"
+          ],
+          "selectionRange": {
+            "min": 5,
+            "max": 5
+          },
+          "maxMulligans": 1
+        }
+      },
+      "newTurn": {
+        "drawOnStart": true,
+        "sharedTurn": false
+      },
+      "countersStartingValues": [
+        0,
+        0
+      ],
+      "draggableTokens": [
+        {
+          "id": "Damage",
+          "name": "Segnalino Danno",
+          "image": "https://valcur.github.io/TCG-Arena-MTG/Images/Tokens/Red.png"
+        },
+        {
+          "id": "BoostATK",
+          "name": "Boost ATK (+1)",
+          "image": "https://valcur.github.io/TCG-Arena-MTG/Images/Tokens/Orange.png"
+        },
+        {
+          "id": "BoostHP",
+          "name": "Boost HP (+1)",
+          "image": "https://valcur.github.io/TCG-Arena-MTG/Images/Tokens/Green.png"
+        }
+      ],
+      "sections": {
+        "categoriesAlreadyOnBoard": [
+          "Leader->Leader",
+          "Stone Deck->StoneDeck",
+          "Market Deck->MarketDeck"
+        ],
+        "layout": {
+          "direction": "column",
+          "content": [
+            {
+              "direction": "row",
+              "content": [
+                {
+                  "section": "MarketDeck",
+                  "style": {
+                    "width": "12vh",
+                    "transform": "rotate(90deg)"
+                  }
+                },
+                {
+                  "section": "Market",
+                  "style": {
+                    "width": "20vh"
+                  }
+                },
+                {
+                  "section": "Battlefield"
+                },
+                {
+                  "section": "Graveyard",
+                  "style": {
+                    "width": "15vh"
+                  }
+                },
+                {
+                  "section": "Exiled",
+                  "style": {
+                    "width": "15vh"
+                  }
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "content": [
+                {
+                  "section": "StoneDeck",
+                  "style": {
+                    "width": "12vh"
+                  }
+                },
+                {
+                  "section": "Stones",
+                  "style": {
+                    "width": "20vh"
+                  }
+                },
+                {
+                  "section": "Base"
+                },
+                {
+                  "section": "MainDeck",
+                  "style": {
+                    "width": "15vh"
+                  }
+                },
+                {
+                  "section": "LeaderZone",
+                  "style": {
+                    "width": "20vh"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "autoPlayFromHand": {
+          "Creatures": "Base",
+          "Items": "Base",
+          "Stones": "Stones",
+          "Spells": "Stack",
+          "Leaders": "Leader"
+        },
+        "autoPlayFromStack": {
+          "Spells": "Graveyard"
+        },
+        "sectionsDict": {
+          "MarketDeck": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Market Deck"
+          },
+          "Market": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "CENTER",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Market"
+          },
+          "Battlefield": {
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Battlefield"
+          },
+          "Graveyard": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DISCARD",
+            "displayedTitle": "Graveyard"
+          },
+          "Exiled": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DISCARD",
+            "displayedTitle": "Exiled"
+          },
+          "StoneDeck": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Stone Deck"
+          },
+          "Stones": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Zona Stones"
+          },
+          "Base": {
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Zona Base"
+          },
+          "MainDeck": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Main Deck"
+          },
+          "LeaderZone": {
+            "direction": "column",
+            "content": [
+              {
+                "section": "Leader"
+              },
+              {
+                "section": "LeaderStats"
+              }
+            ]
+          },
+          "Leader": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "displayedTitle": "Leader"
+          },
+          "LeaderStats": {
+            "type": "custom",
+            "defaultValue": {
+              "exp": 0,
+              "gold": 0,
+              "level": 1
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "style": {
+                  "width": "18vh",
+                  "backgroundColor": "#1a1a2e",
+                  "color": "#ffffff",
+                  "padding": "0.4rem",
+                  "borderRadius": "0.5vh",
+                  "fontSize": "0.8rem"
+                },
+                "className": "d-flex flex-column gap-1"
+              },
+              "children": [
+                {
+                  "type": "div",
+                  "props": {
+                    "className": "d-flex justify-content-between align-items-center"
+                  },
+                  "children": [
+                    {
+                      "type": "span",
+                      "children": ["EXP:"]
+                    },
+                    {
+                      "type": "input-number",
+                      "props": {
+                        "value": "{{ game.data.LeaderStats.exp }}",
+                        "style": {
+                          "width": "6vh"
+                        }
+                      },
+                      "onChange": "game.data.LeaderStats.exp = value;"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "className": "d-flex justify-content-between align-items-center"
+                  },
+                  "children": [
+                    {
+                      "type": "span",
+                      "children": ["GOLD:"]
+                    },
+                    {
+                      "type": "input-number",
+                      "props": {
+                        "value": "{{ game.data.LeaderStats.gold }}",
+                        "style": {
+                          "width": "6vh"
+                        }
+                      },
+                      "onChange": "game.data.LeaderStats.gold = value;"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "className": "d-flex justify-content-between align-items-center"
+                  },
+                  "children": [
+                    {
+                      "type": "span",
+                      "children": ["LVL:"]
+                    },
+                    {
+                      "type": "input-number",
+                      "props": {
+                        "value": "{{ game.data.LeaderStats.level }}",
+                        "style": {
+                          "width": "6vh"
+                        }
+                      },
+                      "onChange": "game.data.LeaderStats.level = value;"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultRessources": {
+    "backgrounds": [
+      "https://unsplash.com/it/s/foto/sfondo-casuale"
+    ],
+    "decksUrl": ""
+  },
+  "customHelp": "Mappa le tue carte nelle sezioni dedicate. Le Spells vanno nella Stack prima di finire nel Graveyard. I contatori di EXP, GOLD e LVL sono posizionati direttamente sotto la zona del Leader.",
+  "cards": {
+    "dataUrl": "https://link-temporaneo.com/carte.json",
+    "cardBack": "https://ibb.co/gMcL4L8C",
+    "version": 1
+  }
+}
