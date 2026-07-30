@@ -1,47 +1,98 @@
-[
-  {
-    "id": "c1",
+{
+  "1001": {
+    "id": "1001",
+    "isToken": false,
+    "face": {
+      "front": {
+        "name": "Creatura di Prova",
+        "type": "Creature",
+        "cost": 2,
+        "image": "https://via.placeholder.com/300x420/2c3e50/ffffff?text=Creatura",
+        "isHorizontal": false
+      }
+    },
     "name": "Creatura di Prova",
     "type": "Creature",
-    "cost": 2,
-    "imageUrl": "https://via.placeholder.com/300x420/2c3e50/ffffff?text=Creatura"
+    "cost": 2
   },
-  {
-    "id": "s1",
+  "1002": {
+    "id": "1002",
+    "isToken": false,
+    "face": {
+      "front": {
+        "name": "Magia di Prova",
+        "type": "Spell",
+        "cost": 1,
+        "image": "https://via.placeholder.com/300x420/8e44ad/ffffff?text=Magia",
+        "isHorizontal": false
+      }
+    },
     "name": "Magia di Prova",
     "type": "Spell",
-    "cost": 1,
-    "imageUrl": "https://via.placeholder.com/300x420/8e44ad/ffffff?text=Magia"
+    "cost": 1
   },
-  {
-    "id": "i1",
+  "1003": {
+    "id": "1003",
+    "isToken": false,
+    "face": {
+      "front": {
+        "name": "Oggetto di Prova",
+        "type": "Item",
+        "cost": 1,
+        "image": "https://via.placeholder.com/300x420/d35400/ffffff?text=Oggetto",
+        "isHorizontal": false
+      }
+    },
     "name": "Oggetto di Prova",
     "type": "Item",
-    "cost": 1,
-    "imageUrl": "https://via.placeholder.com/300x420/d35400/ffffff?text=Oggetto"
+    "cost": 1
   },
-  {
-    "id": "l1",
+  "1004": {
+    "id": "1004",
+    "isToken": false,
+    "face": {
+      "front": {
+        "name": "Leader di Prova",
+        "type": "Leader",
+        "cost": 0,
+        "image": "https://via.placeholder.com/300x420/f1c40f/000000?text=Leader",
+        "isHorizontal": false
+      }
+    },
     "name": "Leader di Prova",
     "type": "Leader",
-    "category": "Leader",
-    "cost": 0,
-    "imageUrl": "https://via.placeholder.com/300x420/f1c40f/000000?text=Leader"
+    "cost": 0
   },
-  {
-    "id": "st1",
+  "1005": {
+    "id": "1005",
+    "isToken": false,
+    "face": {
+      "front": {
+        "name": "Pietra di Prova",
+        "type": "Stones",
+        "cost": 0,
+        "image": "https://via.placeholder.com/300x420/7f8c8d/ffffff?text=Pietra",
+        "isHorizontal": false
+      }
+    },
     "name": "Pietra di Prova",
     "type": "Stones",
-    "category": "Stone Deck",
-    "cost": 0,
-    "imageUrl": "https://via.placeholder.com/300x420/7f8c8d/ffffff?text=Pietra"
+    "cost": 0
   },
-  {
-    "id": "m1",
-    "name": "Mercato di Prova",
+  "1006": {
+    "id": "1006",
+    "isToken": false,
+    "face": {
+      "front": {
+        "name": "Carta Mercato",
+        "type": "Creature",
+        "cost": 3,
+        "image": "https://via.placeholder.com/300x420/27ae60/ffffff?text=Mercato",
+        "isHorizontal": false
+      }
+    },
+    "name": "Carta Mercato",
     "type": "Creature",
-    "category": "Market Deck",
-    "cost": 3,
-    "imageUrl": "https://via.placeholder.com/300x420/27ae60/ffffff?text=Mercato"
+    "cost": 3
   }
-]
+}
