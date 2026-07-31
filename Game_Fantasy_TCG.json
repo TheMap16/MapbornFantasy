@@ -2,14 +2,14 @@
   "name": "Fantasy TCG",
   "menuBackgroundImage": "",
   "defaultRessources": {
-    "backgrounds": [],
-    "decksUrl": ""
+    "backgrounds": []
   },
   "customHelp": "",
   "cardRotation": 45,
   "cards": {
     "dataUrl": "",
-    "cardBack": ""
+    "cardBack": "",
+    "extraCardBacks": {}
   },
   "deckBuilding": {
     "mainFilters": [
@@ -17,38 +17,77 @@
     ],
     "formats": [
       {
-        "name": "Standard",
-        "decks": [
+        "title": "Standard",
+        "gameplay": "Classic",
+        "customCategories": [
+          "Main Deck",
+          "Stone Deck",
+          "Market Deck"
+        ],
+        "deckRuleset": "Standard"
+      }
+    ],
+    "deckRulesets": {
+      "Standard": {
+        "general": {
+          "min": 70,
+          "max": 70
+        },
+        "categories": [
           {
-            "name": "Main Deck",
+            "category": "Leader",
+            "min": 1,
+            "max": 1,
+            "maxPerCard": 1,
+            "ignoreTotalCount": true
+          },
+          {
+            "category": "Main Deck",
             "min": 40,
             "max": 40,
-            "maxCopiesPerCard": 3
+            "maxPerCard": 3
           },
           {
-            "name": "Stone Deck",
+            "category": "Stone Deck",
             "min": 15,
             "max": 15,
-            "maxCopiesPerCard": null
+            "ignoreTotalCount": false
           },
           {
-            "name": "Market Deck",
+            "category": "Market Deck",
             "min": 15,
             "max": 15,
-            "maxCopiesPerCard": 1
+            "maxPerCard": 1
           }
         ]
       }
-    ]
+    }
   },
   "gameplay": {
     "Classic": {
+      "beforeGameStart": {
+        "initialBoardSetup": []
+      },
       "mulligan": {
-        "info": "",
+        "triggeredByButton": false,
         "startingHandSize": 5,
-        "drawNewHand": true,
-        "putSelectionAtBottom": true,
-        "drawNewSelectedCards": false
+        "mulliganCount": {
+          "min": 0,
+          "max": 1
+        },
+        "mulliganCycle": {
+          "info": "Select the cards to replace.",
+          "steps": [
+            "toBottom",
+            "shuffle",
+            "draw"
+          ],
+          "selectionRange": {
+            "min": 0,
+            "max": 5
+          },
+          "keepCardsOrder": false
+        }
       },
       "newTurn": {
         "drawOnStart": false,
@@ -58,6 +97,7 @@
       },
       "defaultNotes": "",
       "tokens": [],
+      "draggableTokens": [],
       "countersStartingValues": [
         0,
         1,
@@ -75,12 +115,63 @@
           "Pila"
         ],
         "layout": {
-          "direction": "row",
+          "direction": "column",
           "isSymetricalForOpponents": false,
-          "content": []
+          "content": [
+            {
+              "direction": "row",
+              "isSymetricalForOpponents": false,
+              "content": [
+                {
+                  "section": "Leader",
+                  "style": {
+                    "width": "25%"
+                  }
+                },
+                {
+                  "section": "Pietre",
+                  "style": {
+                    "width": "25%"
+                  }
+                },
+                {
+                  "section": "Mercato",
+                  "style": {
+                    "width": "25%"
+                  }
+                },
+                {
+                  "section": "Pila",
+                  "style": {
+                    "width": "25%"
+                  }
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "isSymetricalForOpponents": false,
+              "content": [
+                {
+                  "section": "Base",
+                  "style": {
+                    "width": "50%"
+                  }
+                },
+                {
+                  "section": "Campo di Battaglia",
+                  "style": {
+                    "width": "50%"
+                  }
+                }
+              ]
+            }
+          ]
         },
         "categoriesAlreadyOnBoard": [
-          "Leader"
+          "Leader->Leader",
+          "Stone Deck->Pietre",
+          "Market Deck->Mercato"
         ],
         "autoPlayFromHand": {
           "Personaggio": "Base"
@@ -95,7 +186,7 @@
             "height": "SMALL",
             "alignment": "START",
             "opponentAlignment": false,
-            "noAutoPayTo": "true",
+            "noAutoPayTo": true,
             "isHorizontalAllowed": false,
             "displayedTitle": "Leader",
             "enterTapped": false,
@@ -109,14 +200,14 @@
             "title": "Pietre",
             "isHidden": "no",
             "height": "SMALL",
-            "alignment": "START",
+            "alignment": "DECK",
             "opponentAlignment": false,
-            "noAutoPayTo": "true",
+            "noAutoPayTo": true,
             "isHorizontalAllowed": false,
             "displayedTitle": "Pietre",
             "enterTapped": false,
             "enterSpun": false,
-            "isGroupForbidden": false,
+            "isGroupForbidden": true,
             "keepTappedNewTurn": false,
             "showHiddenCardInHistory": false,
             "noQuickActions": false
@@ -127,7 +218,7 @@
             "height": "BIG",
             "alignment": "START",
             "opponentAlignment": false,
-            "noAutoPayTo": "true",
+            "noAutoPayTo": true,
             "isHorizontalAllowed": false,
             "displayedTitle": "Base",
             "enterTapped": false,
@@ -143,7 +234,7 @@
             "height": "BIG",
             "alignment": "START",
             "opponentAlignment": false,
-            "noAutoPayTo": "true",
+            "noAutoPayTo": true,
             "isHorizontalAllowed": false,
             "displayedTitle": "Campo di Battaglia",
             "enterTapped": false,
@@ -157,9 +248,9 @@
             "title": "Mercato",
             "isHidden": "no",
             "height": "SMALL",
-            "alignment": "START",
+            "alignment": "DECK",
             "opponentAlignment": false,
-            "noAutoPayTo": "true",
+            "noAutoPayTo": true,
             "isHorizontalAllowed": false,
             "displayedTitle": "Mercato",
             "enterTapped": false,
@@ -173,9 +264,9 @@
             "title": "Pila",
             "isHidden": "no",
             "height": "SMALL",
-            "alignment": "START",
+            "alignment": "NONE",
             "opponentAlignment": false,
-            "noAutoPayTo": "true",
+            "noAutoPayTo": true,
             "isHorizontalAllowed": false,
             "displayedTitle": "Pila",
             "enterTapped": false,
